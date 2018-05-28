@@ -10,7 +10,7 @@ same_or_reroll_duration = [0.5, 1.0]	# cumulative for the probabilities [0.5, 0.
 
 
 qnote = 60.0/bpm
-durations = [qnote * 2, qnote, qnote / 2, qnote / 4, qnote * 2 / 3, qnote * 2 / 5, qnote *2 / 7, qnote * 4 / 9]
+durations = [qnote * 2, qnote, qnote / 2, qnote / 4, qnote * 2 / 3, qnote * 2 / 5, qnote * 2 / 7, qnote * 4 / 9]
 interval = durations[random.randint(0,7)]
 position = random.randint(18, 251)     # where 18 is the leftmost end of the transport bar, and 251 the rightmost
 keystroke = 'x'
@@ -35,7 +35,7 @@ for x in range(0, events):
 	elif p < stay_back_forward[1]:
 		keystroke = 'z'				# where 'z' is the shortcut for 'previous track' (on Winamp, if it is already on very first track, no harm done)
 	else:
-		keystroke = 'b'				# where 'b' is the shortcut for 'previous track' (on Winamp, if it is already on very last track, no harm done)
+		keystroke = 'b'				# where 'b' is the shortcut for 'next track' (on Winamp, if it is already on very last track, no harm done)
 	ahk.execute('Click 108,62')  	# volume 0%
 	ahk.execute('Send ' + keystroke)
 	ahk.execute('Click ' + str(position) + ',75')
